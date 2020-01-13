@@ -7,8 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name="USERS1")
+@JsonFormat(shape=JsonFormat.Shape.ARRAY)
 public class Users {
 
 	@Id
@@ -22,7 +25,6 @@ public class Users {
 	
 	@OneToMany(mappedBy = "user")
 	private List<Accounts> accountsList;
-	
 	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
